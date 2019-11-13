@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>all.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<blockquote>
+<p>这是一篇markdown基础语法介绍</p>
+</blockquote>
+<p><a href="#%E4%B8%80%E3%80%81%E6%A0%87%E9%A2%98">一、标题</a></p>
+<p><a href="#%E4%BA%8C%E3%80%81%E6%96%87%E5%AD%97">二、文字</a></p>
+<p><a href="#%E4%B8%89%E3%80%81%E5%88%97%E8%A1%A8">三、列表</a></p>
+<p><a href="#%E5%9B%9B%E3%80%81%E6%AE%B5%E8%90%BD">四、段落</a></p>
+<p><a href="#%E4%BA%94%E3%80%81%E4%BB%A3%E7%A0%81%E6%AE%B5">五、代码段</a></p>
+<p><a href="#%E5%85%AD%E3%80%81%E5%88%86%E5%89%B2%E7%BA%BF">六、分割线</a></p>
+<p><a href="#%E4%B8%83%E3%80%81%E9%93%BE%E6%8E%A5">七、链接</a></p>
+<p><a href="#%E5%85%AB%E3%80%81%E5%9B%BE%E7%89%87">八、图片</a></p>
+<p><a href="#%E4%B9%9D%E3%80%81%E8%A1%A8%E6%A0%BC">九、表格</a></p>
+<p><a href="#%E5%8D%81%E3%80%81%E6%A0%87%E9%A2%98%E9%94%9A%E7%82%B9">十、标题锚点</a></p>
+<h1 id="%E4%B8%80%E3%80%81%E6%A0%87%E9%A2%98">一、标题</h1>
+<pre class="hljs"><code><div># h1字体 2em/32px
+
+## h2字体 1.5em/24px
+
+### h3字体
+
+#### h4字体
+
+##### h5字体 0.83em/13px
+
+###### h6字体 0.67em/10px
+
+</div></code></pre>
+<h1 id="%E6%A0%87%E9%A2%98%E4%B8%80">标题一</h1>
+<h2 id="%E6%A0%87%E9%A2%98%E4%BA%8C">标题二</h2>
+<h3 id="%E6%A0%87%E9%A2%98%E4%B8%89">标题三</h3>
+<blockquote>
+<p>浏览器的不同，会有些微妙差异：</p>
+<p>chrome最小字体为12px</p>
+<p>ie为9px</p>
+<p>火狐是可以设置最小字体</p>
+</blockquote>
+<h1 id="%E4%BA%8C%E3%80%81%E6%96%87%E5%AD%97">二、文字</h1>
+<pre class="hljs"><code><div>
+*或_: 斜体
+
+**或__：加粗
+
+***或___：加粗斜体
+
+~~: 删除线
+
+</div></code></pre>
+<p><em>斜体</em></p>
+<p><strong>加粗</strong></p>
+<p><em><strong>加粗斜体</strong></em></p>
+<p><s>删除线</s></p>
+<h1 id="%E4%B8%89%E3%80%81%E5%88%97%E8%A1%A8">三、列表</h1>
+<h3 id="31-%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8">3.1 无序列表</h3>
+<pre class="hljs"><code><div>
+* 可以使用 `*` 作为标记
+
++ 也可以使用 `+`
+
+- 或者 `-`
+
+加上 空格
+
+</div></code></pre>
+<ul>
+<li>
+<p>列表1</p>
+<ul>
+<li>列表1.1</li>
+</ul>
+<ul>
+<li>
+<p>列表1.2</p>
+<ul>
+<li>列表1.2.1</li>
+</ul>
+<ul>
+<li>
+<p>列表1.2.2</p>
+<ul>
+<li>列表1.2.1.1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>列表2</p>
+</li>
+</ul>
+<hr>
+<h3 id="32-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8">3.2 有序列表</h3>
+<pre class="hljs"><code><div>
+ 数字加英文.再加空格
+
+</div></code></pre>
+<ol>
+<li>
+<p>列表1</p>
+</li>
+<li>
+<p>列表2</p>
+</li>
+<li>
+<p>列表3</p>
+</li>
+<li>
+<p>列表4</p>
+</li>
+</ol>
+<hr>
+<pre class="hljs"><code><div>
+内嵌列表(加缩进)
+
+</div></code></pre>
+<ol>
+<li>
+<p>阿西河 HTML 教程</p>
+</li>
+<li>
+<p>阿西河 CSS 教程</p>
+</li>
+<li>
+<p>阿西河 JavaScript 教程</p>
+<ol>
+<li>
+<p>BOM解读</p>
+</li>
+<li>
+<p>DOM解读</p>
+</li>
+</ol>
+</li>
+<li>
+<p>阿西河 jQuery 教程</p>
+</li>
+</ol>
+<h1 id="%E5%9B%9B%E3%80%81%E6%AE%B5%E8%90%BD">四、段落</h1>
+<h3 id="%E5%9F%BA%E7%A1%80%E5%9D%97%E5%86%85%E5%AE%B9%E4%BD%BF%E7%94%A8">基础块内容使用</h3>
+<pre class="hljs"><code><div>
+&gt; + 空格 + 内容
+
+</div></code></pre>
+<blockquote>
+<p>块引用</p>
+<p>这些都在块引用之中</p>
+<p>这些就是多个段落的块引用</p>
+</blockquote>
+<h3 id="%E5%86%85%E5%B5%8C%E5%9D%97%E5%86%85%E5%AE%B9%E4%BD%BF%E7%94%A8">内嵌块内容使用</h3>
+<pre class="hljs"><code><div>&gt;（个数由内嵌深度决定） + 空格 + 内容
+</div></code></pre>
+<blockquote>
+<p>内嵌块引用</p>
+<blockquote>
+<p>这是内部嵌套的块引用</p>
+<blockquote>
+<p>我还可以再嵌套N层哦</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>内部嵌套的块引用</p>
+<p>这是一段文字</p>
+</blockquote>
+</blockquote>
+<h3 id="%E5%86%85%E5%B5%8C%E5%9D%97%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A0%87%E8%AE%B0%E6%B7%B7%E5%90%88%E4%BD%BF%E7%94%A8">内嵌块与其他标记混合使用</h3>
+<blockquote>
+<h4 id="%E6%B7%B7%E5%90%88%E5%89%8D%E9%9D%A2%E7%9A%84%E7%94%A8%E6%B3%95">混合前面的用法</h4>
+<ul>
+<li>第一点好处.</li>
+<li>第二点好处.</li>
+</ul>
+<p><em>任何</em> 一篇文档都是 <strong>非常不错的</strong>.</p>
+</blockquote>
+<h1 id="%E4%BA%94%E3%80%81%E4%BB%A3%E7%A0%81%E6%AE%B5">五、代码段</h1>
+<pre class="hljs"><code><div>
+使用：（``` + 内容、代码块 + ```）
+
+</div></code></pre>
+<pre class="hljs"><code><div>
+let a = 12
+
+console.log(a)
+
+</div></code></pre>
+<pre class="hljs"><code><div>
+<span class="hljs-keyword">let</span> a = <span class="hljs-number">12</span>
+
+<span class="hljs-built_in">console</span>.log(a)
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) </span>{
+
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'cjfpersonal'</span>)
+
+}
+
+</div></code></pre>
+<h1 id="%E5%85%AD%E3%80%81%E5%88%86%E5%89%B2%E7%BA%BF">六、分割线</h1>
+<pre class="hljs"><code><div>
+三个*或-或_（*** 或 --- 或 ___）
+
+</div></code></pre>
+<hr>
+<hr>
+<hr>
+<h1 id="%E4%B8%83%E3%80%81%E9%93%BE%E6%8E%A5">七、链接</h1>
+<pre class="hljs"><code><div>
+[中文描述](地址 鼠标hover内容)
+
+</div></code></pre>
+<p><a href="https://www.baidu.com/">百度地址</a></p>
+<p><a href="https://www.baidu.com/" title="鼠标hover您将会看到">百度地址</a></p>
+<p>斜体：<em><a href="https://www.baidu.com/">百度地址</a></em></p>
+<p>强调:<strong><a href="https://www.baidu.com/">百度地址</a></strong></p>
+<h1 id="%E5%85%AB%E3%80%81%E5%9B%BE%E7%89%87">八、图片</h1>
+<pre class="hljs"><code><div>
+[图片描述](图片相对或绝对地址 hover描述)
+
+[![图片描述](图片相对或绝对地址 hover描述)](跳转地址)
+
+</div></code></pre>
+<h3 id="%E5%9F%BA%E7%A1%80%E5%9B%BE%E7%89%87">基础图片</h3>
+<p><img src="https://upload-images.jianshu.io/upload_images/2673128-a86497d23f1a325e.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt="图片" title="我是只鸟"></p>
+<h3 id="%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5">图片+链接</h3>
+<p><a href="https://p.upyun.com/docs/cloud/demo.jpg"><img src="https://upload-images.jianshu.io/upload_images/2673128-3f0d635ed543c661.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt="阿西河图片" title="我是只鸟"></a></p>
+<h1 id="%E4%B9%9D%E3%80%81%E8%A1%A8%E6%A0%BC">九、表格</h1>
+<h3 id="%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95">基础用法</h3>
+<pre class="hljs"><code><div>
+| 表头  | 表述 |
+|------|------|
+| 内容  | 内容 |
+内容    | 内容 |
+
+</div></code></pre>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内容</td>
+<td>内容</td>
+</tr>
+<tr>
+<td>内容</td>
+<td>内容</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>价格</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>香蕉</td>
+<td>$1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>苹果</td>
+<td>$1</td>
+<td>6</td>
+</tr>
+<tr>
+<td>草莓</td>
+<td>$1</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="%E8%A1%A8%E6%A0%BC%E5%AF%B9%E9%BD%90">表格对齐</h3>
+<pre class="hljs"><code><div>
+ 左对齐   | 右对齐  | 居中 
+
+:---------| ---------:|:------:
+
+ 左号     | 右号       | 中间 
+
+</div></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">左对齐</th>
+<th style="text-align:right">右对齐</th>
+<th style="text-align:center">居中</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">左号</td>
+<td style="text-align:right">右号</td>
+<td style="text-align:center">中间</td>
+</tr>
+<tr>
+<td style="text-align:left">左号选手1</td>
+<td style="text-align:right">右号选手2</td>
+<td style="text-align:center">中间选手3</td>
+</tr>
+</tbody>
+</table>
+<h1 id="%E5%8D%81%E3%80%81%E6%A0%87%E9%A2%98%E9%94%9A%E7%82%B9">十、标题锚点</h1>
+<pre class="hljs"><code><div>算扩展
+
+一般是目录，绑定页内超链接
+
+* [目录1](#目录1)
+
+* [标题1](#标题1)
+
+* [标题2](#标题2)
+
+* [标题3](#标题3)
+
+</div></code></pre>
+<ul>
+<li>
+<p><a href="#%E7%9B%AE%E5%BD%951">目录1</a></p>
+</li>
+<li>
+<p><a href="#%E6%A0%87%E9%A2%981">标题1</a></p>
+</li>
+<li>
+<p><a href="#%E6%A0%87%E9%A2%982">标题2</a></p>
+</li>
+<li>
+<p><a href="#%E6%A0%87%E9%A2%983">标题3</a></p>
+</li>
+</ul>
+<h3 id="%E7%9B%AE%E5%BD%951">目录1</h3>
+<p>文字文字</p>
+<h3 id="%E6%A0%87%E9%A2%981">标题1</h3>
+<p>文字文字</p>
+<h3 id="%E6%A0%87%E9%A2%982">标题2</h3>
+<p>文字文字</p>
+<h3 id="%E6%A0%87%E9%A2%983">标题3</h3>
+<p>文字文字</p>
+
+</body>
+</html>
